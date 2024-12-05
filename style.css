@@ -7,9 +7,6 @@ body, html {
     background-image: url('img/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-* {
     box-sizing: border-box;
 }
 
@@ -25,8 +22,22 @@ body, html {
     justify-content: center;
 }
 
+.header-line{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
 .header-logo{
-    margin-top: 20px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.header-logo img{
+
+    width: 40%;
 }
 
 img.background {
@@ -78,6 +89,7 @@ img.background {
 .about-text_box {
     margin-left: -260px;
     margin-top: -30px;
+    display: flex;
 }
 
 .container-about {
@@ -124,55 +136,41 @@ img.background {
     margin: 0 auto;
     position: relative;
 }
-
 .photo-frame img {
-    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(100%);
 }
 
-.photo-frame img.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0); /* Текущий слайд в центре */
+.photo-frame.swiper {
+    width: 100%;  /* Убираем фиксированную ширину */
+    height: 100%;  /* Убираем фиксированную высоту */
+    position: relative;  /* Убираем любые отступы, которые могут быть заданы */
 }
 
-.photo-frame img.prev {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-100%); /* Предыдущий слайд слева */
+.swiper {
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: none;
 }
 
-.photo-frame img.next {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(100%); /* Следующий слайд справа */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #EDE7CE !important;
+    background: transparent;
+    width: 40px;
+    height: 40px;
 }
 
-.slider {
-    text-align: center;
-    margin-top: 10px;
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 24px;
 }
 
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
+.swiper-pagination-bullet {
+    background-color: #EDE7CE !important;
 }
-
-.dot.active {
-    background-color: #717171;
-}
-
 
 .title_cart {
     display: flex;
@@ -182,6 +180,7 @@ img.background {
 }
 
 .cart {
+    margin-top: 15px;
 }
 
 .cart-box {
@@ -189,15 +188,15 @@ img.background {
     position: relative;
     border-radius: 5px;
     width: 800px;
-    height: 400px;
+    height: 394px;
     border: 4px solid #EDE7CE;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 10 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cart-box iframe{
     position: absolute;
     width: 100%;
-    height: 392px;
+    height: 390px;
     object-fit: cover;
 }
 .section {
@@ -212,7 +211,7 @@ img.background {
 }
 
 .footer{
-    margin-top: 150px; 
+    margin-top: 100px; 
     width: 100%;
     height: 80px;
     background-color: #77272c;
@@ -254,32 +253,53 @@ a:active {
 /* Медиазапросы для адаптивной верстки */
 @media (max-width: 1200px) {
     .header-logo img{
-        width: 70%;
+        width: 60%;
         
     }
     .header-logo{
         display: flex;
         justify-content: center;
     }
-    .about {
-        margin-left: 0;
-    }
 
-    .about-text_box {
-        margin-left: 0;
-    }
-
-    .image-box img {
-        margin-left: 0;
+    .header-line{
+        justify-content: center;
+        width: 90%;
     }
 
     .underline {
         width: 100%;
     }
 
+    .about {
+        margin-left: 0;
+    }
+
+    .about-us-small{
+        display: flex;
+        justify-content: center;
+        margin-left: -30px;
+        margin-bottom: -50px;
+    }
+
+    .about-text_box{
+        margin-left: 20px;
+        margin-top: 20px;
+        max-width: 60%;
+    }
+
+    .image-box{
+        margin-top: 10px;
+    }
+
+    .image-box img{
+        margin-left: 60px;
+        max-width: 450%;
+        
+    }
+
     .photo-frame {
-        width: 100%;
-        height: auto;
+        width: 70%;
+        height: 80vh;
     }
 
     .text-box {
@@ -292,55 +312,20 @@ a:active {
 
     .underframe-text {
         font-size: 35px;
+        color: #EDE7CE;
+    }
+    .cart-box{
+        height: 393px;
     }
 }
 
 @media (max-width: 768px) {
-    .body, html{
-        overflow-x: hidden;
-    }
-    .header-line {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-us-text {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .text-box {
-        font-size: 25px;
-        padding: 10px;
-    }
-
-    .title_about {
-        font-size: 30px;
-    }
-
-    .underframe-text {
-        font-size: 30px;
-    }
-
-    .photo-frame {
-        width: 100%;
-        height: auto;
-    }
-
-    .cart-box {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-width: 480px) {
     .header-logo img{
         width: 70%;  
     }
 
-    .header-logo{
-        display: flex;
-        justify-content: center;
+    .underline {
+        width: 100%;
     }
 
     .header-line{
@@ -355,7 +340,7 @@ a:active {
     }
     .about-us-text .icon{
         font-size: 30px;
-        margin-right: 4px;
+        margin-right: 0px;
     }
     .about-us-text .text{
         font-size: 30px;
@@ -363,12 +348,21 @@ a:active {
     .text-box{
         padding: 16px;
         position: relative;
+        box-sizing: border-box;
+    }
+    .container-about{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
     }
     .about-text_box {
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        width: 95%;
+        width: 70%;
         font-size: 20px;
+        box-sizing: border-box;
         padding: 8px;
         margin: 0 auto;
     }
@@ -376,15 +370,117 @@ a:active {
     .title_about {
         font-size: 25px;
     }
-    .container-about{
+
+    .image-box{
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
         flex-direction: column;
+    }
+
+    .image-box img{
+        margin: 0 auto;
+        width: 90%;
+        
+    }
+
+    .underframe-text {
+        font-size: 20px;
+        color: #EDE7CE;
+    }
+
+    .photo-frame {
+        width: 70%; 
+        height: 450px; 
+    }
+
+    .photo-frame img {
+        object-fit: cover; 
+    }
+
+    .cart-box {
+        width: 90%;
+        height: 294px;
+    }
+
+    .cart-box iframe{
+        height: 292px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .header-logo img{
+        width: 70%;
+    }
+
+    .header-logo{
+        display: flex;
         justify-content: center;
     }
+
+    .underline {
+        width: 100%;
+    }
+
+    .header-line {
+        justify-content: center;
+        width: 90%;
+    }
+    
+    .about-us-small {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .about-us-text .icon {
+        font-size: 30px;
+        margin-right: 4px;
+    }
+    
+    .about-us-text .text {
+        font-size: 30px;
+    }
+    
+    .text-box {
+        padding: 16px;
+        width: 95%;
+        position: relative;
+    }
+    
+    .about-text_box {
+        margin: 0 ;
+        max-width: none;
+        width: 100%;
+        position: static;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        flex: block;
+    }
+    
+    .title_about {
+        font-size: 25px;
+    }
+    
+    .container-about {
+        width: 100%;
+    }
+    
 
     .image-box{
         display: flex;
         margin-top: 30px;
         justify-content: center;
+    }
+
+    .image-box img{
+        max-width: 100%;
+        width: 95%;
+        height: auto; /* Сохраняем пропорции */
+        display: block; /* Убираем лишние пробелы */
+        margin: 0 auto;
     }
 
     .underframe-text {
@@ -397,14 +493,13 @@ a:active {
         height: 450px; 
     }
 
-    .photo-frame img {
-        height: auto; 
-        object-fit: contain; 
+    .swiper-slide img {
+        object-fit: cover; /* Растягиваем изображение на всю доступную область */
     }
 
     .cart-box {
         width: 90%;
-        height: 300px;
+        height: 293px;
     }
 
     .cart-box iframe{

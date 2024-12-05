@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Showroom for the latest fashion styles.">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Showroom</title>
 </head>
+
 <body>
-    <div class='header'>
-        <div class="header-line">
-            <div class="header-logo">
-                <img src="img/header/Logo.png" alt="">
-            </div>
+    <header>
+        <div class="header-logo">
+            <img src="img/header/showoroom-logo.svg" alt="Showroom Logo">
         </div>
-    </div>
-    <div class='header'>
         <div class="header-line">
             <div class="underline"></div>
         </div>
-    </div>
-    <div class="section" id="section2">
-    <div class="about-us-small">
-        <div class="about">
-            <div class="about-us-text">
-                <span class="icon">✦</span>
-                <span class="text">О нас</span>
+    </header>
+
+    <div class="section" id="section1">
+        <div class="about-us-small">
+            <div class="about">
+                <div class="about-us-text">
+                    <span class="icon">✦</span>
+                    <span class="text">О нас</span>
+                </div>
             </div>
         </div>
-    </div>
         <div class="about">
             <div class="about-text_box">
                 <div class="container-about">
                     <div class="text-box">
                         <p>Google Fonts makes it easy to bring personality and performance to your websites and products. Our robust catalog of open-source fonts and icons makes it easy to integrate expressive type and icons seamlessly — no matter where you are in the world.</p>
                     </div>
-                    <div class="image-box"> 
-                        <img src="img/into_shop.png" alt="Описание изображения">
+                    <div class="image-box">
+                        <img src="img/into_shop.png" alt="Shop image">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class='header'>
         <div class="header-line">
             <div class="underline"></div>
         </div>
@@ -54,23 +54,26 @@
             <h1>Fashion of this day</h1>
         </div>
         <div class="photo-frame">
-            <img src="img/photo_2024-11-17_17-34-37.jpg" alt="Photo 1">
-            <img src="img/photo_2024-11-17_17-34-43.jpg" alt="Photo 2">
-            <img src="img/photo_2024-11-17_17-34-48.jpg" alt="Photo 3">
-        </div>
-        <div class="slider">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-    </div>
-    <script src="script.js"></script>
-    <div class='header'>
+            <div class="photo-frame swiper">
+                <div class="swiper-wrapper">
+                  <!-- Слайды -->
+                  <div class="swiper-slide"><img src="img/photo_2024-11-17_17-34-37.jpg" alt="Slide 1"></div>
+                  <div class="swiper-slide"><img src="img/photo_2024-11-17_17-34-43.jpg" alt="Slide 2"></div>
+                  <div class="swiper-slide"><img src="img/photo_2024-11-17_17-34-48.jpg" alt="Slide 3"></div>
+                </div>
+                <!-- Индикаторы (точки) -->
+                <div class="swiper-pagination"></div>
+                <!-- Навигация -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>                 
+        </div>   
         <div class="header-line">
             <div class="underline"></div>
         </div>
     </div>
-    <div class="section" id="section2">
+
+    <div class="section" id="section3">
         <div class="title_cart">
             <h1>Мы на карте</h1>
         </div>
@@ -79,21 +82,27 @@
                 <div style="position:relative;overflow:hidden;">
                     <a href="https://yandex.ru/maps/org/showroom/86708883068/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Showroom</a>
                     <a href="https://yandex.ru/maps/49/penza/category/clothing_store/184107943/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Магазин одежды в Пензе</a>
-                    <iframe src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=45.017460%2C53.187162&mode=poi&poi%5Bpoint%5D=45.016441%2C53.187251&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D86708883068&z=17.6"  frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
-                </div>
-            </div>   
-        </div>
-        <div class="footer">
-            <div class="footer-content">
-                <div class="by">
-                    <a href="https://github.com/pojiloypochatok">
-                        <h1>• by pojiloypochatok •</h1>
-                    </a>
-                </div>
-                <div class="copyright">
-                    <h1> © Showroom 2024</h1>
+                    <iframe src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=45.017460%2C53.187162&mode=poi&poi%5Bpoint%5D=45.016441%2C53.187251&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D86708883068&z=17.6" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
                 </div>
             </div>
         </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="by">
+                <a href="https://github.com/pojiloypochatok">
+                    <h1>• by pojiloypochatok •</h1>
+                </a>
+            </div>
+            <div class="copyright">
+                <h1> © Showroom 2024</h1>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
+
 </html>
